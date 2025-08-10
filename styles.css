@@ -141,7 +141,28 @@ hr {
   justify-content: center;
 }
 
-.resource-card,
+.resource-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 560px; /* Optimal width for YouTube embeds */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Updated YouTube iframe styling */
+.resource-card iframe {
+  width: 100%;
+  aspect-ratio: 16/9; /* Maintain YouTube's aspect ratio */
+  border: none;
+  border-radius: 8px;
+  min-height: 0; /* Allow flexible sizing */
+}
+
 .pdf-card {
   flex: 1;
   min-width: 300px;
@@ -176,22 +197,11 @@ hr {
   flex-grow: 1;
 }
 
-/* Media Elements */
-.resource-card iframe,
 .pdf-frame {
   width: 100%;
+  height: 700px;
   border: none;
   border-radius: 8px;
-  flex-grow: 1;
-  min-height: 300px;
-}
-
-.resource-card iframe {
-  height: 400px;
-}
-
-.pdf-frame {
-  height: 700px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   margin: 15px 0;
 }
@@ -309,8 +319,6 @@ td:first-child {
 }
 
 /* Misc Elements */
-
-/* Used for source information */
 .caption {
   font-family: Arial, Helvetica, sans-serif; 
   color: #6a3faa; 
@@ -320,7 +328,7 @@ td:first-child {
   margin: 0px 15px;
 }
 
-/* Used for the "Back to Top" button */
+/* Back to Top button */
 #myBtn {
   display: none;
   position: fixed;
@@ -358,10 +366,6 @@ footer {
     min-width: 100%;
   }
   
-  .resource-card iframe {
-    height: 350px;
-  }
-  
   .pdf-frame {
     height: 500px;
   }
@@ -377,17 +381,13 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-  width: 100%;
+    width: 100%;
   }
   
   .website-links a {
     width: 100%;
     max-width: 300px;
     text-align: center;
-  }
-  
-  .resource-card iframe {
-    height: 300px;
   }
   
   .pdf-frame {
@@ -426,11 +426,6 @@ footer {
     gap: 10px;
   }
   
-  .resource-card iframe {
-    height: calc((100vw - 40px) * 0.5625);
-    min-height: 200px;
-  }
-  
   .pdf-frame {
     height: calc((100vw - 40px) * 1.4);
     min-height: 300px;
@@ -451,11 +446,6 @@ footer {
   .content-container,
   .home-content-container {
     padding: 12px !important;
-  }
-  
-  .resource-card iframe {
-    height: calc((100vw - 40px) * 0.5625);
-    min-height: 180px;
   }
   
   .pdf-frame {
